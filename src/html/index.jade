@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
   head
-    title Gulp starter
+    title Camera demo
 
     meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
     meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
@@ -10,9 +10,19 @@ html(lang='en')
     meta(name='apple-mobile-web-app-capable' content='yes')
     meta(name='mobile-web-app-capable' content='yes')
 
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css')
+    script(src='https://code.jquery.com/jquery-1.12.4.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js')
     link(type="text/css" rel="stylesheet" href="./css/app.css")
+  body
+    video#capture autoplay
+    #overlay
+      #top-right &nbsp;
+      #top-left &nbsp;
+      #bottom-left &nbsp;
+      #bottom-right &nbsp;
+    a#capture-button.btn-floating.btn-large.waves-effect.waves-light.red
+      i.material-icons photo_camera
 
     script(src='./js/app.js')
-  body
-    h1 Gulp starter
-    p See, nothing is here (kinda) stopping you to start anew!

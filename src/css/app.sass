@@ -1,18 +1,106 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:300,400italic,700italic,400,700)
-
-// Font Variables
-$roboto-slab: 'Roboto Slab', serif
-$open-sans: 'Open Sans', sans-serif
-
 html, body
   margin: 0
   padding: 0
 
 body
   color: #222222
-  font-family: $open-sans
   font-weight: 400
   font-size: large
 
 .padding
   padding: 10px 15px
+
+#capture
+  position: fixed
+  width: 100vw
+  height: 100vh
+  background: gray
+  z-index: -1
+  object-fit: cover
+
+@media (orientation: portrait)
+  #overlay
+    #top-right
+      position: absolute;
+      width: 15vw;
+      height: 10vh;
+      top: 10vw;
+      right: 5vh;
+      border-right: 1px solid lightgreen
+      border-top: 1px solid lightgreen
+    #top-left
+      position: absolute;
+      width: 15vw;
+      height: 10vh;
+      top: 10vw;
+      left: 5vh;
+      border-left: 1px solid lightgreen
+      border-top: 1px solid lightgreen
+    #bottom-left
+      position: absolute;
+      width: 15vw;
+      height: 10vh;
+      bottom: 10vw;
+      left: 5vh;
+      border-left: 1px solid lightgreen
+      border-bottom: 1px solid lightgreen
+    #bottom-right
+      position: absolute;
+      width: 15vw;
+      height: 10vh;
+      bottom: 10vw;
+      right: 5vh;
+      border-right: 1px solid lightgreen
+      border-bottom: 1px solid lightgreen
+
+@media (orientation: landscape)
+  #overlay
+    #top-right
+      position: absolute;
+      width: 10vw;
+      height: 15vh;
+      top: 5vw;
+      right: 10vh;
+      border-right: 1px solid lightgreen
+      border-top: 1px solid lightgreen
+    #top-left
+      position: absolute;
+      width: 10vw;
+      height: 15vh;
+      top: 5vw;
+      left: 10vh;
+      border-left: 1px solid lightgreen
+      border-top: 1px solid lightgreen
+    #bottom-left
+      position: absolute;
+      width: 10vw;
+      height: 15vh;
+      bottom: 5vw;
+      left: 10vh;
+      border-left: 1px solid lightgreen
+      border-bottom: 1px solid lightgreen
+    #bottom-right
+      position: absolute;
+      width: 10vw;
+      height: 15vh;
+      bottom: 5vw;
+      right: 10vh;
+      border-right: 1px solid lightgreen
+      border-bottom: 1px solid lightgreen
+
+@media (orientation: landscape)
+  #capture-button
+    right: 5vw;
+    top: calc(50vh - 40px);
+@media (orientation: portrait)
+  #capture-button
+    bottom: 5vh;
+    left: calc(50vw - 40px);
+
+#capture-button
+  width: 80px
+  height: 80px
+  position: fixed;
+  .material-icons
+    font-size: 36px
+    line-height: 78px
