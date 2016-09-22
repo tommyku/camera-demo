@@ -11,78 +11,68 @@ body
   padding: 10px 15px
 
 #capture
-  position: fixed
-  width: 100vw
-  height: 100vh
+  position: relative
+  height: 50vh
+  #overlay-wrapper
+    position: absolute
+    width: 100vw
+    height: 30vh
+    top: 10vh
+    #overlay
+      background: gray
+      background-image: url(/res/namecard.png)
+      opacity: 0.5
+      width: 80vw
+      height: 30vh
+      margin: auto
+      background-position: center center
+      background-size: contain
+      background-repeat: no-repeat
+  #caption
+    position: absolute
+    bottom: 0
+    font-family:  sans
+    color:  white
+    width:  100%
+    text-align:  center
+
+body.landscape
+  #capture
+    height: 60vh
+
+#video
+  display: flex
+  width: 100%
+  height: 100%
   background: gray
   z-index: -1
   object-fit: cover
 
-@media (orientation: portrait)
-  #overlay
-    opacity: .5
-    position: absolute;
-    top: 10vw;
-    right: 5vh;
-    bottom: 10vw;
-    left: 5vh;
-    background-color: lightgray
-    .portrait
-      display: block
-      padding: 4em
-      display: block
-      .icon
-        display: block
-        width: 100%
-        .material-icons
-          color: gray
-          font-size: 144px
-      .text
-        display: block
-        width: 100%
-        .line
-          padding-top: 4px
-          background: gray
-          margin-top: 2em
-    .landscape
-      display: none
+#orientation
+  height: 10vh
+  background: gray
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  button.change-orientation
+    display: flex
 
-@media (orientation: landscape)
-  #overlay
-    opacity: .5
-    position: absolute;
-    left: 10vw;
-    top: 5vh;
-    right: 10vw;
-    bottom: 5vh;
-    background-color: lightgray
-    .portrait
-      display: none
-    .landscape
-      padding: 4em
-      display: block
-      .icon
-        display: inline-block
-        width: 45%
-        .material-icons
-          color: gray
-          font-size: 144px
-      .text
-        display: inline-block
-        width: 50%
-        .line
-          padding-top: 4px
-          background: gray
-          margin-top: 2em
-
-@media (orientation: landscape)
-  #capture-button
-    right: 5vw;
-    top: calc(50vh - 40px);
-@media (orientation: portrait)
-  #capture-button
-    bottom: 5vh;
-    left: calc(50vw - 40px);
+#snap
+  height: 40vh
+  background: black
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  button
+    height: 30vh
+    width: 30vh
+    border-radius: 15vh
+    border-style: none
+    outline: none
+    i.material-icons
+      font-size: 20vh
 
 #capture-button
   width: 80px

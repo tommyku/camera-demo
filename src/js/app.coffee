@@ -1,6 +1,6 @@
 'use strict'
 
-video = document.getElementById 'capture'
+video = document.getElementById 'video'
 camera = 0
 videoSource = null
 
@@ -18,6 +18,8 @@ sourceSelected = (videoSource)->
   }
 
 MediaStreamTrack.getSources((sourceInfos)->
+  return if (camera < 0)
+
   sourceInfos.forEach((sourceInfo)->
     if (sourceInfo.kind == 'video')
       console.log(sourceInfo.id, sourceInfo.label || 'camera')
