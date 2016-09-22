@@ -1,0 +1,130 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: #222222;
+  font-weight: 400;
+  font-size: large; }
+
+.padding {
+  padding: 10px 15px; }
+
+#capture {
+  position: relative;
+  height: 50vh; }
+  #capture #overlay-wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 30vh;
+    top: 10vh; }
+    #capture #overlay-wrapper #overlay {
+      background: gray;
+      background-image: url(/res/namecard.png);
+      opacity: 0.8;
+      width: 80vw;
+      height: 30vh;
+      margin: auto;
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat; }
+  #capture #caption {
+    position: absolute;
+    bottom: 0;
+    font-family: sans;
+    color: white;
+    width: 100%;
+    text-align: center; }
+
+body.landscape #capture {
+  height: 60vh; }
+  body.landscape #capture #overlay-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 5vh; }
+    body.landscape #capture #overlay-wrapper #overlay {
+      background: gray;
+      background-image: url(/res/landscape.png);
+      opacity: 0.8;
+      width: 50vw;
+      height: 100%;
+      margin: auto;
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat; }
+  body.landscape #capture #caption {
+    position: absolute;
+    left: 0;
+    font-family: sans;
+    color: white;
+    width: 100%;
+    transform: translateX(-40vw) translateY(-30vh) rotateZ(90deg); }
+
+body.landscape #snap {
+  height: 30vh; }
+  body.landscape #snap button {
+    height: 20vh;
+    width: 20vh; }
+    body.landscape #snap button i.material-icons {
+      font-size: 10vh; }
+
+#video {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: gray;
+  z-index: -1;
+  object-fit: cover; }
+
+#orientation {
+  height: 10vh;
+  background: #343d4e;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  #orientation button.change-orientation {
+    display: -ms-flexbox;
+    display: flex;
+    max-height: 8vh;
+    width: 80vw;
+    text-align: center; }
+    #orientation button.change-orientation img {
+      max-width: 5vh;
+      max-height: 5vh;
+      width: 100%;
+      margin: auto; }
+
+#snap {
+  height: 40vh;
+  background: black;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  #snap button {
+    height: 30vh;
+    width: 30vh;
+    border-radius: 15vh;
+    border-style: none;
+    outline: none; }
+    #snap button i.material-icons {
+      font-size: 20vh; }
+
+#capture-button {
+  width: 80px;
+  height: 80px;
+  position: fixed; }
+  #capture-button .material-icons {
+    font-size: 36px;
+    line-height: 78px; }
