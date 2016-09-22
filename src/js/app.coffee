@@ -1,5 +1,8 @@
 'use strict'
 
+$('.change-orientation').on 'click', (e)->
+  $(document.body).toggleClass('landscape')
+
 video = document.getElementById 'video'
 camera = 0
 videoSource = null

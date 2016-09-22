@@ -12,24 +12,18 @@ html(lang='en')
 
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
     link(type="text/css" rel="stylesheet" href="./css/app.css")
-  body
+  body.landscape
     #capture
       video#video autoplay
       #overlay-wrapper
         #overlay
-          #pic
-          #text
-            .line
-            .line
-            .line
       #caption Aim camera at a business card
     #orientation
       button.change-orientation
-        i.material-icons chevron_left
-      button.change-orientation
-        i.material-icons chevron_right
+        img(src='res/rotate.png')
     #snap
       button
         i.material-icons photo_camera
 
+    script(src='https://code.jquery.com/jquery-1.12.4.min.js')
     script(src='./js/app.js')
