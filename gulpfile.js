@@ -59,7 +59,7 @@ gulp.task('js', function(){
     .pipe(gulpif(argv.live, connect.reload()))
 });
 
-gulp.task('publish', function(){
+gulp.task('publish', ['build'], function(){
   gulp.src(['index.html'], { base: '.' })
     .pipe(gulp.dest('./output'));
   gulp.src(['css/**/*.css'], { base: 'css' })
@@ -70,7 +70,12 @@ gulp.task('publish', function(){
     .pipe(gulp.dest('./output/bower_components'));
 });
 
-gulp.task('build', ['html', 'sass', 'css', 'js']);
+gulp.task('res', function() {
+  gulp.src(['res/**/*'], { base: 'bower_components' })
+    .pipe(gulp.dest('./output/res'));
+});
+
+gulp.task('build', ['html', 'sass', 'css', 'js', 'res']);
 
 gulp.task('serve', function() {
   connect.server({
@@ -85,4 +90,5 @@ gulp.task('default', ['build', 'serve'], function(){
   gulp.watch("src/css/**/*.sass", ['sass']);
   gulp.watch("src/css/**/*.scss", ['css']);
   gulp.watch("src/js/**/*.coffee", ['js']);
+  gulp.watch("res/**/*", ['res']);
 });
