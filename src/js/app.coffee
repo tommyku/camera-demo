@@ -36,11 +36,14 @@ MediaStreamTrack.getSources((sourceInfos)->
 
 
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia)
-    navigator.mediaDevices.getUserMedia({ video: true }).then((stream)->
-      console.debug 'x'
-      video.src = window.URL.createObjectURL(stream)
-      video.play()
-    )
+    navigator
+      .mediaDevices
+      .getUserMedia(sourceSelected(videoSource))
+      .then((stream)->
+        console.debug 'x'
+        video.src = window.URL.createObjectURL(stream)
+        video.play()
+      )
   else if (navigator.webkitGetUserMedia)
     console.debug 'y'
     navigator.webkitGetUserMedia(
