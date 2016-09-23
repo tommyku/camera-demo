@@ -49,9 +49,7 @@ MediaStreamTrack.getSources(function(sourceInfos) {
   });
   console.debug(videoSource);
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    return navigator.mediaDevices.getUserMedia({
-      video: true
-    }).then(function(stream) {
+    return navigator.mediaDevices.getUserMedia(sourceSelected(videoSource)).then(function(stream) {
       console.debug('x');
       video.src = window.URL.createObjectURL(stream);
       return video.play();
